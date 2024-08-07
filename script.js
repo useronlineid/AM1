@@ -34,6 +34,10 @@ function updateDisplay() {
     const sendername = document.getElementById('sendername').value || '-';
     const datetime = document.getElementById('datetime').value || '-';
     const Memo = document.getElementById('Memo').value || '-';
+    
+    const newCompanyName = document.getElementById('newCompanyName').value || '-';
+    const newCompanyNameEng = document.getElementById('newCompanyNameEng').value || '-';
+    const newCompanyAddress = document.getElementById('newCompanyAddress').value || '-';
 
     // แปลงค่าจำนวนเงินจาก string เป็น number เพื่อนำไปคำนวณ
     const amount1Num = parseFloat(amount1.replace(/,/g, '')) || 0;
@@ -54,9 +58,9 @@ function updateDisplay() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
         
-        drawText(ctx, `บริษัท ไทย โฮลดิ้ง มารีน คอนแทรคเตอร์ส จํากัด`, 964.5, 174.3, '54.68px TH SarabunPSK', '#000000', '800', 'center', 1500);
-        drawText(ctx, `THAI HOLDING MARINE CONTRACTORS COMPANY LIMITED`, 964.5, 233.3, '50.68px TH SarabunPSK', '#000000', '800', 'center', 1500);
-        drawText(ctx, `ที่อยู่ : 33/36 อาคารวอล สตรีททาวเวอร่ ห้องเลขที่ 902 ชั้น 9 ถนนสุรวงศ์ แขวงสุริยวงศ์ เขตบางรัก กรุงเทพมหานคร`, 964.5, 284.5, '40.68px TH SarabunPSK', '#000000', '600', 'center', 1500);
+        drawText(ctx, ` ${newCompanyName}`, 964.5, 174.3, '54.68px TH SarabunPSK', '#000000', '800', 'center', 1500);
+        drawText(ctx, `${newCompanyNameEng}`, 964.5, 233.3, '50.68px TH SarabunPSK', '#000000', '800', 'center', 1500);
+        drawText(ctx, `${newCompanyAddress}`, 964.5, 284.5, '40.68px TH SarabunPSK', '#000000', '600', 'center', 1500);
 
         drawText(ctx, `เรียนแจ้ง : ${sendername}`, 120.5, 380.5, '40.68px TH SarabunPSK', '#000000', '600', 'left', 1500);
 
